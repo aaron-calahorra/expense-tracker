@@ -1,0 +1,37 @@
+// LOCALHOST 
+### Get all contacts
+GET http://localhost:8080/expenses
+
+### Get contact by ID
+GET http://localhost:8080/expenses/63350ec9330b03f9672dbf60
+
+### Create contact
+POST http://localhost:8080/expenses HTTP/1.1
+Content-Type: application/json
+
+{
+  "description": "Phone Payment",
+  "total": "720.45",
+  "type": "Services",
+  "date": "05/05/2022",
+  "account": "Purple"
+}
+
+// PRODUCTION Deploy 
+### 
+GET https://expense-tracker-aaron-calahorra.onrender.com/expenses
+
+### Get contact by ID
+GET https://expense-tracker-aaron-calahorra.onrender.com/expenses/63350ec9330b03f9672dbf60
+
+### Create contact
+POST https://expense-tracker-aaron-calahorra.onrender.com/expenses HTTP/1.1
+Content-Type: application/json
+
+{
+  "description": "Phone Payment",
+  "total": "720.45",
+  "type": "Services",
+  "date": "05/05/2022",
+  "account": "Purple"
+}
