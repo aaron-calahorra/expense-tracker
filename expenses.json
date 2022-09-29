@@ -1,0 +1,23 @@
+{
+    "expense": {
+        "description": "Walmart",
+        "total": "250.32",
+        "type": "Groceries",
+        "date": "04/30/2022",
+        "account": "Blue"
+    },
+    "expense2": {
+        "description": "Car Payment",
+        "total": "403.90",
+        "type": "Transportation",
+        "date": "04/30/2022",
+        "account": "Blue"
+    },
+    "expense3": {
+        "description": "Gas",
+        "total": "1016.00",
+        "type": "Transportation",
+        "date": "04/30/2022",
+        "account": "Red"
+    }
+}
