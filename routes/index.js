@@ -6,7 +6,7 @@ router.use('/expenses', expense);
 router.use(
   '/',
   (docData = (req, res) => {
-    let docData = "Hello world! Ready to keep records of your expenses?";
+    let docData = "Hello world! Expense Tracker App";
     res.send(docData);
   })
 );
