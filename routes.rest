@@ -1,11 +1,11 @@
 // LOCALHOST 
-### Get all contacts
+### Get all expenses
 GET http://localhost:8080/expenses
 
-### Get contact by ID
+### Get expense by ID
 GET http://localhost:8080/expenses/63350ec9330b03f9672dbf60
 
-### Create contact
+### Create expense
 POST http://localhost:8080/expenses HTTP/1.1
 Content-Type: application/json
 
@@ -17,14 +17,30 @@ Content-Type: application/json
   "account": "Purple"
 }
 
+### Edit expense
+PUT http://localhost:8080/expenses/63352643b320e4a282b3c339 HTTP/1.1
+Content-Type: application/json
+
+{
+  "description": "Phone Payment",
+  "total": "720.45",
+  "type": "Services",
+  "date": "05/05/2022",
+  "account": "Red"
+}
+
+### Delete expense
+DELETE http://localhost:8080/expenses/63352643b320e4a282b3c339 HTTP/1.1
+
+
 // PRODUCTION Deploy 
-### 
+### Get all expenses
 GET https://expense-tracker-aaron-calahorra.onrender.com/expenses
 
-### Get contact by ID
+### Get expense by ID
 GET https://expense-tracker-aaron-calahorra.onrender.com/expenses/63350ec9330b03f9672dbf60
 
-### Create contact
+### Create expense
 POST https://expense-tracker-aaron-calahorra.onrender.com/expenses HTTP/1.1
 Content-Type: application/json
 
@@ -35,3 +51,18 @@ Content-Type: application/json
   "date": "05/05/2022",
   "account": "Purple"
 }
+
+### Edit expense
+PUT https://expense-tracker-aaron-calahorra.onrender.com/expenses/632bf507ac55e59d1c8a2ea7 HTTP/1.1
+Content-Type: application/json
+
+{
+  "description": "Phone Payment",
+  "total": "720.45",
+  "type": "Services",
+  "date": "05/05/2022",
+  "account": "Red"
+}
+
+### Delete contact
+DELETE https://expense-tracker-aaron-calahorra.onrender.com/expenses/632bf507ac55e59d1c8a2ea7 HTTP/1.1
