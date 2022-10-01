@@ -15,6 +15,9 @@ const getAll = async (req, res, next) => {
 
 const getSingle = async (req, res, next) => {
     try {
+      if (!ObjectId.isValid(req.params.id)) {
+        res.status(400).json('Must use a valid expense id to find a expense.');
+      } else {
       const userId = new ObjectId(req.params.id);
       const result = await mongodb
         .getDb()
@@ -24,7 +27,7 @@ const getSingle = async (req, res, next) => {
       result.toArray().then((lists) => {
         res.setHeader('Content-Type', 'application/json');
         res.status(200).json(lists[0]);
-      });
+      })};
     } catch (err) {
       res.status(500).json({ message: err.message });
     }  
@@ -52,6 +55,9 @@ const createExpense = async (req, res) => {
 
 const updateExpense = async (req, res) => {
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must use a valid expense id to find a expense.');
+    } else {
     const userId = new ObjectId(req.params.id);
     const expense = {
       description: req.body.description,
@@ -70,7 +76,7 @@ const updateExpense = async (req, res) => {
       res.status(204).send();
     } else {
       res.status(500).json(response.error || 'Some error occurred while updating the expense.');
-    }
+    }};
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -78,6 +84,9 @@ const updateExpense = async (req, res) => {
 
 const deleteExpense = async (req, res) => {
   try {
+    if (!ObjectId.isValid(req.params.id)) {
+      res.status(400).json('Must use a valid expense id to find a expense.');
+    } else {
     const userId = new ObjectId(req.params.id);
     const response = await mongodb.getDb().db().collection('expenses').remove({ _id: userId }, true);
     console.log(response);
@@ -85,7 +94,7 @@ const deleteExpense = async (req, res) => {
       res.status(200).send();
     } else {
       res.status(500).json(response.error || 'Some error occurred while deleting the expense.');
-    }
+    }};
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
