@@ -13,7 +13,7 @@ const getAll = async (req, res, next) => {
   }
 };
 
-const getSingle = async (req, res, next) => {
+const getSingle = async (req, res) => {
     try {
       if (!ObjectId.isValid(req.params.id)) {
         res.status(400).json('Must use a valid expense id to find a expense.');
