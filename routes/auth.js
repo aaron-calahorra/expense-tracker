@@ -7,7 +7,7 @@ const GOOGLE_CLIENT_SECRET = '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';
 passport.use(new GoogleStrategy({
     clientID: GOOGLE_CLIENT_ID,
     clientSecret: GOOGLE_CLIENT_SECRET,
-    callbackURL: "http://localhost:8080/google/callback",
+    callbackURL: "https://expense-tracker-aaron-calahorra.onrender.com/google/callback",
     passReqToCallback: true
   },
   function(request, accessToken, refreshToken, profile, done) {
